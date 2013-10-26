@@ -22,3 +22,6 @@ debug/
 release/
 
 vc110.pdb
+MediaPlayer.app/
+ui_*.h
+ui_*.cpp
