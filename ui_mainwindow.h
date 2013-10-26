@@ -19,7 +19,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QWidget>
@@ -39,7 +38,7 @@ public:
     QLabel *label;
     QPushButton *pausePushButton;
     QPushButton *rewindPushButton;
-    QProgressBar *positionProgressBar;
+    QSlider *positionHorizontalSlider;
     QMenuBar *menuBar;
     QMenu *menuFile;
 
@@ -47,7 +46,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(488, 162);
+        MainWindow->resize(488, 151);
         actionClose = new QAction(MainWindow);
         actionClose->setObjectName(QStringLiteral("actionClose"));
         centralWidget = new QWidget(MainWindow);
@@ -94,11 +93,10 @@ public:
         QIcon icon4;
         icon4.addFile(QStringLiteral(":/button/Resources/rewind.png"), QSize(), QIcon::Normal, QIcon::Off);
         rewindPushButton->setIcon(icon4);
-        positionProgressBar = new QProgressBar(centralWidget);
-        positionProgressBar->setObjectName(QStringLiteral("positionProgressBar"));
-        positionProgressBar->setGeometry(QRect(20, 100, 451, 23));
-        positionProgressBar->setValue(0);
-        positionProgressBar->setTextVisible(false);
+        positionHorizontalSlider = new QSlider(centralWidget);
+        positionHorizontalSlider->setObjectName(QStringLiteral("positionHorizontalSlider"));
+        positionHorizontalSlider->setGeometry(QRect(20, 100, 451, 19));
+        positionHorizontalSlider->setOrientation(Qt::Horizontal);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));

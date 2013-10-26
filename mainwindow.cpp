@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     player_= new QMediaPlayer;
     player_->setVolume(ui->volumeHorizontalSlider->value());
 
-    connect(player_, SIGNAL(positionChanged(qint64)), this, SLOT(updateProgressBar(qint64)));
+    connect(player_, SIGNAL(positionChanged(qint64)), this, SLOT(updateTimeElapsedSlider(qint64)));
     connect(player_, SIGNAL(durationChanged(qint64)), this, SLOT(setDuration(qint64)));
 
     connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(close()));
@@ -93,15 +93,23 @@ void MainWindow::on_rewindPushButton_clicked()
     }
 
     player_->setPosition(0);
-    ui->positionProgressBar->setValue(0);
+    //ui->positionProgressBar->setValue(0);
+    ui->positionHorizontalSlider->setValue(0);
+    player_->play();
 }
 
-void MainWindow::updateProgressBar(qint64 percent)
+void MainWindow::on_positionHorizontalSlider_sliderMoved(int position)
 {
-    ui->positionProgressBar->setValue(percent);
+    player_->setPosition(position);
+}
+
+void MainWindow::updateTimeElapsedSlider(qint64 percent)
+{
+    ui->positionHorizontalSlider->setValue(percent);
 }
 
 void MainWindow::setDuration(qint64 duration)
 {
-    ui->positionProgressBar->setMaximum(duration);
+    ui->positionHorizontalSlider->setMaximum(duration);
 }
+

@@ -23,8 +23,9 @@ private slots:
     void on_volumeHorizontalSlider_valueChanged(int value);
     void on_pausePushButton_clicked();
     void on_rewindPushButton_clicked();
+    void on_positionHorizontalSlider_sliderMoved(int position);
 
-    void updateProgressBar(qint64 percent);
+    void updateTimeElapsedSlider(qint64 percent);
     void setDuration(qint64 duration);
 
 private:

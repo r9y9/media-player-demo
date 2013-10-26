@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>488</width>
-    <height>162</height>
+    <height>151</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -141,20 +141,17 @@
       <normaloff>:/button/Resources/rewind.png</normaloff>:/button/Resources/rewind.png</iconset>
     </property>
    </widget>
-   <widget class="QProgressBar" name="positionProgressBar">
+   <widget class="QSlider" name="positionHorizontalSlider">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>100</y>
       <width>451</width>
-      <height>23</height>
+      <height>19</height>
      </rect>
     </property>
-    <property name="value">
-     <number>0</number>
-    </property>
-    <property name="textVisible">
-     <bool>false</bool>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
   </widget>

@@ -1,7 +1,7 @@
-media-player-demo
+A Media player
 =================
 
-A Media player demonstration using Qt multimedia
+A Media player demonstration using Qt multimedia library
 
 # Requirement
 
