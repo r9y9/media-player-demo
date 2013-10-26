@@ -1,4 +1,4 @@
-A Media player
+A Media player Demo
 =================
 
 A Media player demonstration using Qt multimedia library
