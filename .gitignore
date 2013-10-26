@@ -16,5 +16,9 @@
 *.pro.user.*
 moc_*.cpp
 qrc_*.cpp
-Makefile
+Makefile*
 *-build-*
+debug/
+release/
+
+vc110.pdb
