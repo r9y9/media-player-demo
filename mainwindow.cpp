@@ -93,7 +93,6 @@ void MainWindow::on_rewindPushButton_clicked()
     }
 
     player_->setPosition(0);
-    //ui->positionProgressBar->setValue(0);
     ui->positionHorizontalSlider->setValue(0);
     player_->play();
 }
@@ -112,4 +111,3 @@ void MainWindow::setDuration(qint64 duration)
 {
     ui->positionHorizontalSlider->setMaximum(duration);
 }
-
