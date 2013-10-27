@@ -25,3 +25,4 @@ vc110.pdb
 MediaPlayer.app/
 ui_*.h
 ui_*.cpp
+.DS_Store
